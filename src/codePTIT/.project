@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>codePTIT</name>
+=======
+	<name>src_codePTIT</name>
+>>>>>>> ae4438c2525df3832a88b0cb7ef27c2f57c27ad8
 	<comment></comment>
 	<projects>
 	</projects>
