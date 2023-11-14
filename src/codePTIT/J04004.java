@@ -1,13 +1,13 @@
 package codePTIT;
 
 import java.util.Scanner;
-class phanSo{
+class ps{
 	private long tu, mau;
-	public phanSo() {
+	public ps() {
 		tu = 0;
 		mau = 1;
 	}
-	public phanSo(long tu, long mau) {
+	public ps(long tu, long mau) {
 		this.tu = tu;
 		this.mau = mau;
 	}
@@ -31,8 +31,7 @@ public class J04004 {
 		long t = sc.nextLong();
 		long tu = x*t + y*z;
 		long mau = y*t;
-		System.out.println(tu + "\n" + mau);
-		phanSo res = new phanSo(tu, mau);
+		ps res = new ps(tu, mau);
 		System.out.println(res);
 	}
 
