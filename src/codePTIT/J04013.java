@@ -3,26 +3,29 @@ package codePTIT;
 import java.util.Scanner;
 class TuyenSinh{
 	private String msv, ten; 
-	private double toan, ly, hoa, sum, pri, tong;
-	public TuyenSinh(String msv, String ten, double toan, double ly, double hoa) {
+	private float toan, ly, hoa, pri, tong;
+	public TuyenSinh(String msv, String ten, float toan, float ly, float hoa) {
 		this.msv = msv;
 		this.ten = ten;
 		this.toan = toan;
 		this.ly = ly;
 		this.hoa = hoa;
-		sum = toan + ly + hoa;
 		String tmp = msv.substring(0,3);
-		if(tmp.equals("KV1")) pri = 0.5;
-		else if(tmp.equals("KV2")) pri = 1;
-		else if(tmp.equals("KV3")) pri = 2.5;
-		tong = toan*2 + ly + hoa;
+		if(tmp.equals("KV1")) this.pri = 0.5f;
+		else if(tmp.equals("KV2")) this.pri = 1.f;
+		else if(tmp.equals("KV3")) this.pri = 2.5f;
+		this.tong = toan*2 + ly + hoa;
+	}
+	public String formatFloat(float x) {
+		int tmp = (int) (x*10);
+		return tmp%10 == 0 ? String.format("%.0f", x) : String.format("%.1f", x);
 	}
 	public String check() {
-		if(tong < 24) return "TRUOT";
+		if(tong + pri < 24.f) return "TRUOT";
 		return "TRUNG TUYEN";
 	}
 	public String toString() {
-		return msv + " " + ten + " " + pri + " " + tong + " " + check();
+		return msv + " " + ten + " " + formatFloat(pri) + " " + formatFloat(tong) + " " + check();
 	}
 	
 }
@@ -31,9 +34,9 @@ public class J04013 {
 	public static void main(String[] args) {
 		String msv = sc.nextLine();
 		String ten = sc.nextLine();
-		double toan = sc.nextDouble();
-		double ly = sc.nextDouble();
-		double hoa = sc.nextDouble();
+		float toan = Float.parseFloat(sc.nextLine());
+		float ly = Float.parseFloat(sc.nextLine());
+		float hoa = Float.parseFloat(sc.nextLine());
 		TuyenSinh p = new TuyenSinh(msv, ten, toan, ly, hoa);
 		System.out.println(p);
 		
