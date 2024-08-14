@@ -1,11 +1,10 @@
 package codePTIT;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class J02006 {
-	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		int n, m;
 		n = sc.nextInt();
 		m = sc.nextInt();

@@ -2,22 +2,16 @@ package codePTIT;
 import java.util.Scanner;
 
 public class J01005 {
-
-    public static Scanner ip = new Scanner(System.in);
-
-    public static void testCase() {
-        int n = ip.nextInt();
-        int h = ip.nextInt();
-        for (double i = 1d; i < n; i++) {
-            System.out.printf("%.6f ", Math.sqrt(i / n) * h);
-        }
-        System.out.println();
-    }
-
     public static void main(String[] args) {
-        int T = ip.nextInt();
-        while (T-- > 0) {
-            testCase();
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int h = sc.nextInt();
+            for(double i = 1d; i < n; i++){
+                System.out.printf("%.6f ", Math.sqrt(i/n)*h);
+            }
+            System.out.println();
         }
     }
 }

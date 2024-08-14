@@ -3,16 +3,16 @@ package codePTIT;
 import java.util.Scanner;
 import static java.lang.Math.*;
 
-class Point{
+class p{
 	private double x, y;
-	public Point() {
+	public p() {
 		this(0f, 0f);
 	}
-	public Point(double x, double y) {
+	public p(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
-	public Point(Point p) {
+	public p(p p) {
 		this.x = p.x;
 		this.y = p.y;
 	}
@@ -22,10 +22,10 @@ class Point{
 	public double getY() {
 		return y;
 	}
-	double distance(Point p) {
+	double distance(p p) {
 		return sqrt(pow(this.x-p.x, 2) + pow(this.y - p.y, 2));
 	}
-	double distance(Point a, Point b) {
+	double distance(p a, p b) {
 		return sqrt(pow(a.x-b.x, 2) + pow(a.y-b.y, 2));
 	}
 	public String toString() {
@@ -38,11 +38,11 @@ public class J04008 {
 	public static void main(String[] args) {
 		int t = sc.nextInt();
 		while(t-->0) {
-			Point[] arr = new Point[3];
+			p[] arr = new p[3];
 			for(int i = 0; i < 3; i++) {
 				double x = sc.nextDouble();
 				double y = sc.nextDouble();
-				arr[i] = new Point(x, y);
+				arr[i] = new p(x, y);
 			}
 			double a = arr[0].distance(arr[1]);
 			double b = arr[1].distance(arr[2]);

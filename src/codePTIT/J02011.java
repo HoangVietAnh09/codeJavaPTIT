@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class J02011 {
 	public static Scanner sc = new Scanner(System.in);
-	public static void swap(int &x, int &y) {
+	public static void swap(int x, int y) {
 		int tmp = x;
 		x = y;
 		y = tmp;
