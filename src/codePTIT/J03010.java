@@ -1,25 +1,25 @@
 package codePTIT;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class J03010 {
-	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		int t = Integer.parseInt(sc.nextLine());
-		while(t-->0) {
-			String[] s = sc.nextLine().trim().split("\\s+");
-			for(int i = 0; i < s.length; i++) {
-				s[i] = s[i].toLowerCase();
+		HashMap<String, Integer> hm = new HashMap<>();
+		while (t-- > 0) {
+			String[] word = sc.nextLine().trim().toLowerCase().split("\\s+");
+			String fistName = "";
+			for(int i = 0; i < word.length-1; i++) {
+				fistName += word[i].substring(0,1);
 			}
-			System.out.print(s[s.length-1]);
-			for(int i = 0; i < s.length-1; i++) {
-				System.out.print(s[i].substring(0,1));
+			if(!hm.containsKey(fistName)) {
+				System.out.println(word[word.length-1] + fistName + "@ptit.edu.vn");
+				hm.put(fistName, 2);
+			}else{
+				System.out.println(word[word.length-1] + fistName + hm.get(fistName) + "@ptit.edu.vn");
+				hm.put(fistName, hm.get(fistName) + 1);
 			}
-			System.out.println("@ptit.edu.vn");
-			
-			
 		}
-		
 	}
-
 }

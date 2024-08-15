@@ -27,8 +27,8 @@ class PhanSo{
 }
 
 public class J04003 {
-	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		long tu = sc.nextLong();
 		long mau = sc.nextLong();
 		PhanSo a = new PhanSo(tu, mau);
