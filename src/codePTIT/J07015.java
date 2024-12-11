@@ -12,7 +12,7 @@ public class J07015 {
         }
         return n > 1;
     }
-    public static void main(String[] args) throws IOException, ClassNotFoundException, EOFException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("SONGUYEN.in"));
         ArrayList<Integer> list = (ArrayList<Integer>) ois.readObject();
         Map<Integer, Integer> map = new HashMap<>(10005);

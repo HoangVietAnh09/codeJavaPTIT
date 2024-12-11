@@ -18,8 +18,8 @@ class ThiSinh {
         if(this.MTS.substring(0,3).equals("KV1")) this.uuTien = 0.5;
         else if(this.MTS.substring(0,3).equals("KV2")) this.uuTien = 1.0;
         else this.uuTien = 2.5;
-        this.tongDiem = this.toan*2 + this.ly + this.ly + this.uuTien;
-        if(this.tongDiem >= 24){
+        this.tongDiem = this.toan*2 + this.ly + this.hoa;
+        if(this.tongDiem + this.uuTien >= 24.0){
             this.trangThai = "TRUNG TUYEN";
         }else{
             this.trangThai = "TRUOT";
@@ -33,7 +33,7 @@ class ThiSinh {
     }
 
     public String toString(){
-        return MTS + " " + hoTen + " " + fm(tongDiem) + " " + fm(tongDiem) + " " + trangThai;
+        return MTS + " " + hoTen + " " + fm(uuTien) + " " + fm(tongDiem) + " " + trangThai;
     }
 
 }

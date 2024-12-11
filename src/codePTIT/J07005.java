@@ -3,14 +3,12 @@ package codePTIT;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class J07005 {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        DataInputStream dis = new DataInputStream(new FileInputStream("DATA.in"));
+    public static void main(String[] args) throws IOException {
+        DataInputStream dis = new DataInputStream(new FileInputStream("DATA.IN"));
         Map<Integer, Integer> map = new TreeMap<>();
         while(dis.available()>0){
             int s = dis.readInt();

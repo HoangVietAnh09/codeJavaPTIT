@@ -8,9 +8,15 @@ public class J03013 {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while (t-- > 0) {
-            BigInteger a = new BigInteger(sc.next());
-            BigInteger b = new BigInteger(sc.next());
-            System.out.println(a.subtract(b));
+            BigInteger a = sc.nextBigInteger();
+            BigInteger b = sc.nextBigInteger();
+            BigInteger c = a.subtract(b).abs();
+            StringBuilder sb = new StringBuilder(c.toString());
+            int max = Math.max(a.toString().length(), b.toString().length());
+            if(sb.length() < max){
+                sb.insert(0, "0");
+            }
+            System.out.println(sb);
         }
     }
 }

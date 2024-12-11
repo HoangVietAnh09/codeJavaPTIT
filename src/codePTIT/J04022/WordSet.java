@@ -3,40 +3,48 @@ package codePTIT.J04022;
 import java.util.Set;
 import java.util.TreeSet;
 
-class WordSet {
-    private String s;
-    Set<String> st = new TreeSet<>();
+public class WordSet {
+    private String word;
 
-    public WordSet(){
-
+    public WordSet(String word) {
+        this.word = word;
     }
-    public WordSet(String s) {
-        this.s = s;
-        String[] tmp = s.split("\\s+");
-        for (int i = 0; i < tmp.length; i++) {
-            st.add(tmp[i]);
+
+    public String union(WordSet s){
+        String[] tmp = s.word.toLowerCase().trim().split("\\s+");
+        String[] tmp1 = this.word.toLowerCase().trim().split("\\s+");
+        Set<String> set = new TreeSet<>();
+        for(String t : tmp){
+            set.add(t);
         }
+        for(String t : tmp1){
+            set.add(t);
+        }
+        String res = "";
+        for(String t : set){
+            res += t + " ";
+        }
+        return res;
     }
 
-//    public WordSet union(WordSet ws) {
-//        WordSet c = new WordSet();
-//
-//    }
+    public String intersection(WordSet s){
+        String[] tmp = s.word.toLowerCase().trim().split("\\s+");
+        String[] tmp1 = this.word.toLowerCase().trim().split("\\s+");
+        Set<String> set1 = new TreeSet<>();
+        Set<String> set2 = new TreeSet<>();
+        for(String t : tmp){
+            set1.add(t);
+        }
+        for(String t : tmp1){
+            set2.add(t);
+        }
 
-    public WordSet intersection(WordSet ws) {
-        for (String s : st) {
-            if (ws.st.contains(s)) {
-                this.st.add(s);
+        String res = "";
+        for(String t : set2){
+            if(set1.contains(t)){
+                res += t + " ";
             }
         }
-        return this;
-    }
-
-    public String toString(){
-        String s = "";
-        for(String x : st){
-            s += x + " ";
-        }
-        return s;
+        return res;
     }
 }

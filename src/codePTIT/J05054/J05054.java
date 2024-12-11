@@ -1,6 +1,10 @@
 package codePTIT.J05054;
 
+import codePTIT.ThucHanh3.B4.SinhVien;
+
 import java.util.*;
+
+
 
 public class J05054 {
     public static void main(String[] args) {
@@ -12,19 +16,17 @@ public class J05054 {
             String hoTen = sc.nextLine();
             double diemTrungBinh = Double.parseDouble(sc.nextLine());
             list.add(new HocSinh(hoTen, diemTrungBinh));
+            clone = (ArrayList<HocSinh>) list.clone();
         }
-        int cnt = 1;
-        Collections.sort(clone);
-        for(HocSinh hocSinh : list) {
-            for(HocSinh rec : clone){
-                if(hocSinh.getDiemTrungBinh() == rec.getDiemTrungBinh()) {
-                    hocSinh.setThuTu(cnt++);
+        Collections.sort(list);
+        for(HocSinh hs : clone){
+            for(int i = 0; i < list.size(); i++){
+                if(list.get(i).getDiemTrungBinh() == hs.getDiemTrungBinh()){
+                    hs.setThuTu(i+1);
                     break;
                 }
             }
-        }
-        for(HocSinh hocSinh : list) {
-            System.out.println(hocSinh);
+            System.out.println(hs);
         }
     }
 }

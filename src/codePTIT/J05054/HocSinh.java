@@ -30,6 +30,6 @@ class HocSinh implements Comparable<HocSinh>{
 
     @Override
     public int compareTo(HocSinh o) {
-        return Double.compare(this.diemTrungBinh, o.diemTrungBinh);
+        return -Double.compare(this.diemTrungBinh, o.diemTrungBinh);
     }
 }
